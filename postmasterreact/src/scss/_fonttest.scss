@@ -1,0 +1,34 @@
+.font-test-default {
+    @include lnhg-(1.5);
+    @include fosz-rm-(3);
+}
+
+.font-test-inter {
+    @extend .font-test-default;
+    @include fofa-('Inter');
+}
+
+.font-test-librebaskerville {
+    @extend .font-test-default;
+    @include fofa-('LibreBaskerville');
+}
+
+.font-test-ptserif {
+    @extend .font-test-default;
+    @include fofa-('PTSerif');
+}
+
+.font-test-rubikwetpaint {
+    @extend .font-test-default;
+    @include fofa-('RubikWetPaint');
+}
+
+.font-test-sourcecodepro {
+    @extend .font-test-default;
+    @include fofa-('SourceCodePro');
+}
+
+.font-test-sourcesans3 {
+    @extend .font-test-default;
+    @include fofa-('SourceSans3');
+}

@@ -1,0 +1,232 @@
+// Color Palette //
+
+// https://dair-ai.thinkific.com/
+
+$cl-1: #212326;
+$cl-2: #45494F;
+$cl-3: #808080;
+$cl-4: #e5e5e5;
+
+// For React BaseComponent CSS Values
+
+header {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .jscn-spbe;
+    @extend .alit-ct;
+}
+
+.navbar {
+    @extend .dp-fx;
+    @extend .jscn-spbe;
+    @extend .alit-ct;
+    @include gp-rm-(2);
+    @include mxwd-rm-(75);
+    @include pd-rm-(2);
+    @include pdtp-rm-(1);
+    @include wd-pc-(100%);
+}
+
+.navbar-logo {
+    @include hg-rm-(4);
+    @include fl-($cl-1);
+    @include fl-hv-($cl-2);
+}
+
+.navbar-user-logo {
+    @include hg-rm-(2);
+    @include fl-($cl-1);
+    @include fl-hv-($cl-2);
+}
+
+.navbar-menu {
+    @extend .dp-fx;
+    @extend .alit-ct;
+    @extend .fxwr-wr;
+    @include gp-rm-(2);
+    @include rwgp-rm-(0);
+}
+
+main {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .alit-ct;
+}
+
+.main-container {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .fxgr;
+    @include mxwd-rm-(75);
+    @include pd-rm-(2);
+    @include pdtp-rm-(1.5);
+    @include wd-pc-(100%);
+}
+
+section {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .fxgr;
+}
+
+footer {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .jscn-ct;
+    @extend .alit-ct;
+}
+
+.footer-container {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .jscn-ct;
+    @extend .alit-ct;
+    @include mxwd-rm-(75);
+    @include pd-rm-(2);
+    @include pdtp-rm-(1);
+    @include pdbt-rm-(1);
+    @include wd-pc-(100%);
+}
+
+.text-1 {
+    @include cl-($cl-1);
+    @include lnhg-(2.5);
+    @include fofa-('Inter');
+    @include fosz-rm-(1.10);
+}
+
+.alert-1 {
+    @extend .text-1;
+    @include cl-($cl-red);
+    @include fosz-rm-(1);
+}
+
+.title-page {
+    @include pdbt-rm-(1.3);
+    @include cl-($cl-1);
+    @include lnhg-(1.5);
+    @include fosz-rm-(3.5);
+    @include fofa-('LibreBaskerville');
+    @extend .txal-ct;
+}
+
+.title-page-sub {
+    @include cl-($cl-1);
+    @include lnhg-(2);
+    @include fosz-rm-(1.5);
+    @include fofa-('SourceSans3');
+    @extend .txal-ct;
+}
+
+.title-1 {
+    @include cl-($cl-1);
+    @include lnhg-(2);
+    @include fosz-rm-(2);
+    @include fofa-('SourceSans3');
+    @extend .txal-ct;
+}
+
+.title-2 {
+    @include pdbt-rm-(5);
+    @include cl-($cl-1);
+    @include lnhg-(1.5);
+    @include fosz-rm-(9);
+    @include fofa-('LibreBaskerville');
+    @extend .txal-ct;
+}
+
+.link-1 {
+    @extend .text-1;
+    @extend .dp-bl;
+    @include cl-hv-($cl-2);
+    @extend .txdc-hv-ul;
+}
+
+.link-navbar-menu {
+    @extend .link-1;
+    @include fosz-rm-(1.05);
+    @include fofa-('Inter');
+}
+
+.link-navbar-menu-active {
+    @extend .link-navbar-menu;
+    @include cl-($cl-2);
+    @extend .txdc-ul;
+}
+
+.form {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @include gp-rm-(1);
+    @include pd-rm-(0.5);
+}
+
+.form-container {
+    @extend .dp-fx;
+    @extend .fxwr-wr;
+    @extend .jscn-spbe;
+    @extend .alit-ct;
+    @include gp-rm-(1);
+    
+    &:last-of-type {
+        @extend .jscn-fxen;
+    }
+}
+
+.form-label {
+    @include fosz-rm-(1.2);
+}
+
+.form-input {
+    @include pd-rm-(0.6);
+    @include bgcl-($cl-white);
+    @include cl-($cl-1);
+    @extend .brst-sl;
+    @include brwd-rm-(0.1);
+    @include brcl-($cl-grey);
+    @include brrd-rm-(0.5);
+    &:focus {
+        @extend .ou-nn;
+        @include brcl-($cl-1);
+    }
+
+}
+
+.button-1 {
+    @include pd-rm-(0.6);
+    @include pdlt-rm-(0.8);
+    @include pdrt-rm-(0.8);
+    @include bgcl-($cl-white);
+    @include bgcl-hv-($cl-2);
+    @include cl-($cl-1);
+    @include cl-hv-($cl-white);
+    @include fofa-('Inter');
+    @extend .brst-sl;
+    @include brwd-rm-(0.09);
+    @include brcl-($cl-3);
+    @include brcl-hv-($cl-2);
+    @include brrd-rm-(0.6);
+    @include bxsd-cl-(0px, 0px, 1px, 0px, $cl-3);
+    @include bxsd-hv-cl-(0px, 0px, 8px, 0px, $cl-3);
+}
+
+.container-centered-vertically {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .jscn-ct;
+    @extend .fxgr;
+}
+
+.container-centered-horizantally {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .alit-ct;
+}
+
+.content {
+    @include pdtp-rm-(1);
+}
+
+.separator {
+    @include pdtp-rm-(7.5);
+}

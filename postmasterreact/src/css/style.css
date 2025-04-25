@@ -1,0 +1,297 @@
+/* Basic CSS Reset: */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.dp-bl {
+  display: block;
+}
+
+.dp-nn {
+  display: none !important;
+}
+
+.dp-fx, .todo, .filter-group, .checkbox-group, .input-group, form, main, footer, header {
+  display: flex;
+}
+
+.fxdr-co, form, main, footer {
+  flex-direction: column;
+}
+
+.fxdr-rw, .todo, .filter-group, .checkbox-group, .input-group, header {
+  flex-direction: row;
+}
+
+.jscn-spar {
+  justify-content: space-around;
+}
+
+.jscn-spbe {
+  justify-content: space-between;
+}
+
+.jscn-fxst {
+  justify-content: flex-start;
+}
+
+.jscn-fxen {
+  justify-content: flex-end;
+}
+
+.jscn-ct {
+  justify-content: center;
+}
+
+.alit-ct, .filter-group, .input-group, main, footer {
+  align-items: center;
+}
+
+.fxwr-wr {
+  flex-wrap: wrap;
+}
+
+.fxgr {
+  flex-grow: 1;
+}
+
+.mnhg-in {
+  min-height: inherit;
+}
+
+.bgcl-tr {
+  background-color: transparent;
+}
+
+.fowe-bd {
+  font-weight: bold;
+}
+
+.txdc-lt, .stroke {
+  text-decoration: line-through;
+}
+
+.txdc-ul {
+  text-decoration: underline;
+}
+
+.txdc-hv-ul:hover {
+  text-decoration: underline;
+}
+
+.txal-ct {
+  text-align: center;
+}
+
+.brst-sl, .textinput, .searchbar, button {
+  border-style: solid;
+}
+
+.br-nn {
+  border: none;
+}
+
+.br-hv-nn:hover {
+  border: none;
+}
+
+.ou-nn, .textinput:focus, .searchbar:focus {
+  outline: none !important;
+}
+
+.oust-sl {
+  outline-style: solid;
+}
+
+.cr-pt {
+  cursor: pointer;
+}
+
+header {
+  gap: 1rem;
+  padding-left: 8rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #ff7979;
+  color: #dff9fb;
+  font-size: 2rem;
+}
+
+h1 {
+  color: #dff9fb;
+}
+
+footer {
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+main {
+  gap: 2rem;
+}
+
+button {
+  padding: 0.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  background-color: #ea8685;
+  color: white;
+  font-family: Inter, sans-serif;
+  border-width: 0.09rem;
+  border-color: #ea8685;
+  border-radius: 0.6rem;
+  box-shadow: 0px 0px 1px 0px #30336b;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+button:hover {
+  box-shadow: 0px 0px 4px 0px #30336b;
+}
+
+form {
+  gap: 2rem;
+}
+
+.input-group {
+  gap: 1rem;
+}
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+}
+
+.title {
+  padding-top: 2rem;
+  color: #30336b;
+  font-size: 2.6rem;
+}
+
+.logo {
+  height: 4rem;
+  fill: #dff9fb;
+}
+.logo:hover {
+  fill: #ff7979;
+}
+
+.icon {
+  height: 1.3rem;
+  fill: #30336b;
+}
+.icon:hover {
+  fill: #ff7979;
+}
+
+.searchbar {
+  width: 40rem;
+  padding: 0.6rem;
+  border-width: 0.1rem;
+  border-color: grey;
+  border-radius: 0.5rem;
+}
+.searchbar:focus {
+  border-color: #30336b;
+}
+
+.textinput {
+  padding: 0.6rem;
+  border-width: 0.1rem;
+  border-color: grey;
+  border-radius: 0.5rem;
+}
+.textinput:focus {
+  border-color: #30336b;
+}
+
+.checkbox-group {
+  gap: 0.8rem;
+}
+
+.filter-group {
+  gap: 2rem;
+}
+
+.todo {
+  gap: 0.5rem;
+}
+
+.font-test-default, .font-test-sourcesans3, .font-test-sourcecodepro, .font-test-rubikwetpaint, .font-test-ptserif, .font-test-librebaskerville, .font-test-inter {
+  line-height: 1.5;
+  font-size: 3rem;
+}
+
+.font-test-inter {
+  font-family: Inter, sans-serif;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-test-librebaskerville {
+  font-family: LibreBaskerville, sans-serif;
+}
+@font-face {
+  font-family: "LibreBaskerville";
+  src: url("./fonts/LibreBaskerville.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-test-ptserif {
+  font-family: PTSerif, sans-serif;
+}
+@font-face {
+  font-family: "PTSerif";
+  src: url("./fonts/PTSerif.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-test-rubikwetpaint {
+  font-family: RubikWetPaint, sans-serif;
+}
+@font-face {
+  font-family: "RubikWetPaint";
+  src: url("./fonts/RubikWetPaint.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-test-sourcecodepro {
+  font-family: SourceCodePro, sans-serif;
+}
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("./fonts/SourceCodePro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-test-sourcesans3 {
+  font-family: SourceSans3, sans-serif;
+}
+@font-face {
+  font-family: "SourceSans3";
+  src: url("./fonts/SourceSans3.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}/*# sourceMappingURL=style.css.map */

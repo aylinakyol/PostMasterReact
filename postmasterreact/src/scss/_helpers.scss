@@ -1,0 +1,283 @@
+// Display Related
+
+.dp-bl {
+    display: block;
+}
+
+.dp-nn {
+    display: none !important;
+}
+
+.dp-fx {
+    display: flex;
+}
+
+.fxdr-co {
+    flex-direction: column;
+}
+
+.fxdr-rw {
+    flex-direction: row;
+}
+
+.jscn-spar {
+    justify-content: space-around;
+}
+
+.jscn-spbe {
+    justify-content: space-between;
+}
+
+.jscn-fxst {
+    justify-content: flex-start
+}
+
+.jscn-fxen {
+    justify-content: flex-end;
+}
+
+.jscn-ct {
+    justify-content: center;
+}
+
+.alit-ct {
+    align-items: center;
+}
+
+.fxwr-wr {
+    flex-wrap: wrap;
+}
+
+.fxgr {
+    flex-grow: 1;
+}
+
+@mixin gp-rm-($value) {
+    gap: #{$value}rem;
+}
+
+@mixin rwgp-rm-($value) {
+    row-gap: #{$value}rem;
+}
+
+@mixin cogp-rm-($value) {
+    column-gap: #{$value}rem;
+}
+
+// Height Width Related
+
+@mixin hg-rm-($value) {
+    height: #{$value}rem;
+}
+
+@mixin wd-rm-($value) {
+    width: #{$value}rem;
+}
+
+@mixin wd-pc-($valuepercent) {
+    width: #{$valuepercent};
+}
+
+@mixin mxwd-rm-($value) {
+    max-width: #{$value}rem;
+}
+
+.mnhg-in {
+    min-height: inherit;
+}
+
+@mixin mnhg-rm-($value) {
+    min-height: #{$value}rem;
+}
+
+@mixin mnwd-rm-($value) {
+    min-width: #{$value}rem;
+}
+
+// Padding Margin Related
+
+@mixin pd-rm-($value) {
+    padding: #{$value}rem;
+}
+
+@mixin pdtp-rm-($value) {
+    padding-top: #{$value}rem;
+}
+
+@mixin pdbt-rm-($value) {
+    padding-bottom: #{$value}rem;
+}
+
+@mixin pdrt-rm-($value) {
+    padding-right: #{$value}rem;
+}
+
+@mixin pdlt-rm-($value) {
+    padding-left: #{$value}rem;
+}
+
+// Background Related
+
+@mixin fl-($value) {
+    fill: #{$value};
+}
+
+@mixin fl-hv-($value) {
+
+    &:hover {
+        fill: #{$value};
+    }
+}
+
+.bgcl-tr {
+    background-color: transparent;
+}
+
+@mixin bgcl-($value) {
+    background-color: #{$value};
+}
+
+@mixin bgcl-hv-($value) {
+    
+    &:hover {
+        background-color: #{$value};
+    }
+}
+
+@mixin op-($value) {
+    opacity: #{$value};
+}
+
+// Text Related
+
+@mixin cl-($value) {
+    color: #{$value};
+}
+
+@mixin cl-hv-($value) {
+    
+    &:hover {
+        color: #{$value};
+    }
+}
+
+@mixin fosz-rm-($value) {
+    font-size: #{$value}rem;
+}
+
+@mixin lnhg-($value) {
+    line-height: #{$value};
+}
+
+// Old Version
+// @mixin fofa-($value) {
+//     font-family: #{$value}, sans-serif;
+// }
+
+@mixin fofa-($value) {
+    @font-face {
+        font-family: '#{$value}';
+        src: url('./fonts/#{$value}.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    font-family: #{$value}, sans-serif;
+}
+
+.fowe-bd {
+    font-weight: bold;
+}
+
+.txdc-lt {
+    text-decoration: line-through;
+}
+
+.txdc-ul {
+    text-decoration: underline;
+}
+
+.txdc-hv-ul {
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.txal-ct {
+    text-align: center;
+}
+
+
+// Border Related
+
+// First -> X Axis, // Second -> Y Axis, // Third -> Blur, // Fourth -> Spread Radius, // Last -> Color
+// box-shadow: 0px 0px 0px 10px red; -> Shows 10 px wide red rectangle solid border
+// box-shadow: 0px 0px 10px 0px red; -> Shows 10 px wide red rectangle blur
+@mixin bxsd-cl-($value1, $value2, $value3, $value4, $value) {
+    box-shadow: #{$value1} #{$value2} #{$value3} #{$value4} #{$value};
+}
+
+@mixin bxsd-hv-cl-($value1, $value2, $value3, $value4, $value) {
+    
+    &:hover {
+        box-shadow: #{$value1} #{$value2} #{$value3} #{$value4} #{$value};
+    }
+}
+
+@mixin brwd-rm-($value) {
+    border-width: #{$value}rem;
+}
+
+.brst-sl {
+    border-style: solid;
+}
+
+@mixin brcl-($value) {
+    border-color: #{$value};
+}
+
+@mixin brcl-hv-($value) {
+
+    &:hover {
+        border-color: #{$value};
+    }
+}
+
+.br-nn {
+    border: none;
+}
+
+.br-hv-nn {
+
+    &:hover {
+        border: none;
+    }
+}
+
+@mixin brrd-rm-($value) {
+    border-radius: #{$value}rem;
+}
+
+.ou-nn {
+    outline: none !important;
+}
+
+@mixin ouwd-rm-($value) {
+    outline-width: #{$value}rem;
+}
+
+@mixin oucl-cl-($value) {
+    outline-color: #{$value};
+}
+
+.oust-sl {
+    outline-style: solid;
+}
+
+.cr-pt {
+    cursor: pointer;
+}
+
+@mixin ts-al-ms($value) {
+    transition: all #{$value}ms ease;
+}

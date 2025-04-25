@@ -1,0 +1,137 @@
+// Color Palette //
+
+$cl-1: #ff7979;
+$cl-2: #dff9fb;
+$cl-3: #30336b;
+$cl-4: #ea8685;
+
+header {
+    @extend .dp-fx;
+    @extend .fxdr-rw;
+    @include gp-rm-(1);
+    @include pdlt-rm-(8);
+    @include pdtp-rm-(4);
+    @include pdbt-rm-(4);
+    @include bgcl-($cl-1);
+    @include cl-($cl-2);
+    @include fosz-rm-(2);
+}
+
+h1 {
+    @include cl-($cl-2);
+}
+
+footer {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .alit-ct;
+    @include pd-rm-(2);
+    @include fosz-rm-(1.20);
+}
+
+main {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    @extend .alit-ct;
+    @include gp-rm-(2);
+}
+
+button {
+    @include pd-rm-(0.6);
+    @include pdlt-rm-(0.8);
+    @include pdrt-rm-(0.8);
+    @include bgcl-($cl-4);
+    @include cl-($cl-white);
+    @include fofa-('Inter');
+    @extend .brst-sl;
+    @include brwd-rm-(0.09);
+    @include brcl-($cl-4);
+    @include brrd-rm-(0.6);
+    @include bxsd-cl-(0px, 0px, 1px, 0px, $cl-3);
+    @include bxsd-hv-cl-(0px, 0px, 4px, 0px, $cl-3);
+}
+
+form {
+    @extend .dp-fx;
+    @extend .fxdr-co;
+    // @extend .alit-ct;
+    @include gp-rm-(2);
+}
+
+.input-group {
+    @extend .dp-fx;
+    @extend .fxdr-rw;
+    @extend .alit-ct;
+    @include gp-rm-(1);    
+}
+
+.checkbox {
+    @include wd-rm-(2);
+    @include hg-rm-(2);
+}
+
+.title {
+    @include pdtp-rm-(2);
+    @include cl-($cl-3);
+    @include fosz-rm-(2.60);
+}
+
+.logo {
+    @include hg-rm-(4);
+    @include fl-($cl-2);
+    @include fl-hv-($cl-1);
+}
+
+.icon {
+    @include hg-rm-(1.3);
+    @include fl-($cl-3);
+    @include fl-hv-($cl-1);
+}
+
+.searchbar {
+    @include wd-rm-(40);
+    @include pd-rm-(0.6);
+    @extend .brst-sl;
+    @include brwd-rm-(0.1);
+    @include brcl-($cl-grey);
+    @include brrd-rm-(0.5);
+    &:focus {
+        @extend .ou-nn;
+        @include brcl-($cl-3);
+    }
+}
+
+.textinput {
+    @include pd-rm-(0.6);
+    @extend .brst-sl;
+    @include brwd-rm-(0.1);
+    @include brcl-($cl-grey);
+    @include brrd-rm-(0.5);
+    &:focus {
+        @extend .ou-nn;
+        @include brcl-($cl-3);
+    }
+}
+
+.checkbox-group {
+    @extend .dp-fx;
+    @extend .fxdr-rw;
+    @include gp-rm-(0.8);
+}
+
+.filter-group {
+    @extend .dp-fx;
+    @extend .fxdr-rw;
+    @include gp-rm-(2);
+    @extend .alit-ct;
+}
+
+.todo {
+    @extend .dp-fx;
+    @extend .fxdr-rw;
+    @include gp-rm-(0.5);
+}
+
+.stroke {
+    @extend .txdc-lt;
+}
