@@ -1,20 +1,39 @@
 import Request_Body from "../Request_Body"
+import { useState } from "react";
 
 export default function Page_Home() {
+    const options = ["post", "get", "put", "patch", "delete"];
+    const [requestBody, setRequestBody] = useState("");
+    const [requestType, setRequestType] = useState("post");
+    const [url, setUrl] = useState("");
+
+    function handleSelectChange(e){
+        setRequestType(e.target.value);
+        console.log("Seçilen değer:", e.target.value);
+    };
+
+    async function handleButtonClick() {
+        console.log("İstek tipi:", requestType);
+        console.log("URL:", url);
+        console.log("Request Body:", requestBody);
+        
+    }
     return (
         <div className="request-options">
-            <label for="request">Request Option:</label>
-            <select id="request" name="request">
-                <option value="post">POST</option>
-                <option value="get">GET</option>
-                <option value="put">PUT</option>
-                <option value="patch">PATCH</option>
-                <option value="delete">DELETE</option>
+            <label htmlFor="request">Request Option:</label>
+            <select id="request" name="request" value={requestType} 
+            onChange={handleSelectChange}>
+                {options.map((option) => (
+                    <option key={option} value={option}>
+                        {option.toUpperCase()}
+                    </option>
+                ))}
             </select>
-            <label for="url">Url:</label>
-            <input type="text" id="url" name="url" />
-            <button>Make Request</button>
-            <Request_Body />
+
+            <label htmlFor="url">Url:</label>
+            <input type="text" id="url" name="url" value={url} onChange={(e) => setUrl(e.target.value)} />
+            <button onClick={handleButtonClick}>Make Request</button>
+            <Request_Body requestBody={requestBody} setRequestBody={setRequestBody}/>
         </div>
     )
 }
