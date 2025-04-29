@@ -1,8 +1,9 @@
 export const pageHome = "/";
+export const pageCollections = "/collections";
 
 export const navbarMenuItems = [
     { key: 1, href: pageHome, name: 'Add New Request', visible: true, svgId: 1 },
-    { key: 2, href: pageHome, name: 'Collections', visible: true, svgId: 2 },
+    { key: 2, href: pageCollections, name: 'Collections', visible: true, svgId: 2 },
 ];
 
 export const svgList = [

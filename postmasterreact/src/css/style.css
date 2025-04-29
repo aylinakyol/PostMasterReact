@@ -20,7 +20,6 @@
   width: 20%;
   height: 100vh;
   background-color: #9ec6f352;
-  color: #1B56FD;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -37,27 +36,22 @@
   gap: 15px;
 }
 
-.link-navbar-menu {
+.link-navbar-menu,
+.link-navbar-menu-active {
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-size: 18px;
+  color: black;
+  font-size: 1.5rem;
   padding: 10px 12px;
   border-radius: 8px;
   margin-left: 2px;
   gap: 8px;
-}
-
-.link-navbar-menu-active {
-  text-decoration: none;
-  color: black;
-  font-size: 1.5rem;
-  margin-left: 0;
   white-space: nowrap;
 }
 
+
 .link-navbar-menu-active:hover{
-  color: #007bff;
   text-decoration: underline;
 }
 
@@ -90,17 +84,18 @@ main {
 }
 
 .link-navbar-menu svg[data-icon="burger"] path {
-  stroke: #6b7280;
-  stroke-width: 2;
+  stroke: #3b82f6;
   transition: stroke 0.2s ease;
 }
 
 .link-navbar-menu-active svg[data-icon="burger"] path {
   stroke: #3b82f6;
+  stroke-width: 2;
 }
 
 .link-navbar-menu:hover svg[data-icon="burger"] path {
   stroke: #1d4ed8;
+  stroke-width: 2;
 }
 
 .link-navbar-menu svg[data-icon="addRequest"] {
@@ -237,6 +232,47 @@ label {
   font-family: Inter;
   font-size: 1.5rem;
   padding: 10px 20px;
+}
+
+.input-body {
+  padding: 50px 50px;
+}
+
+.input-body input {
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-bottom: 200px;
+  padding-right: 400px;
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Köşeleri yuvarlatır */
+  margin-left: 0rem;
+  outline: none;
+  width: 100%; /* veya istediğin genişlik: örn. 300px */
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.input-body input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.input-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 0.5rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 @font-face {
