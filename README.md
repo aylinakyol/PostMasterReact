@@ -1,4 +1,3 @@
-<<<<<<< HEAD
-=======
+## Yapılacaklar
 
->>>>>>> 925673538f8e19168e7418d29ba0298f11d6fb89
++ params ve auth partlarını ekle.
