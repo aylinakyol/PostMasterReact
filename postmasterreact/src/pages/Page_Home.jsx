@@ -68,8 +68,11 @@ export default function Page_Home() {
                 parsedBody = JSON.parse(requestBody);
                 requestOptions.body = JSON.stringify(parsedBody)
                 } catch (e) {
-                console.error('Geçersiz JSON:', e);
-                return;
+                    const output = {
+                        success: false,
+                        error: e.message
+                    };
+                    setResponseData(output);
                 }
             }
             const response = await fetch(url, requestOptions);
