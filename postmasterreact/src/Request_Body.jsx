@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Request_Body({requestBody, setRequestBody}) {
+export default function Request_Body({requestBody, setRequestBody, requestHeader, setRequestHeader}) {
   const [activePopup, setActivePopup] = useState(null);
 
   const handleButtonClick = (popupType) => {
@@ -16,22 +16,20 @@ export default function Request_Body({requestBody, setRequestBody}) {
     setRequestBody(e.target.value)
   }
 
+  function handleInputValue(e) {
+    setRequestHeader(e.target.value);
+  }
+
   const headerContent = (
-    <div className="input-header">
-      <div className="input-row">
-        <label htmlFor="key">Key:</label>
-        <input type="text" id="key" name="key" />
-      </div>
       <div className="input-row">
         <label htmlFor="value">Value:</label>
-        <input type="text" id="value" name="value" />
+        <input type="text" id="value" name="value" onChange={handleInputValue} />
       </div>
-    </div>
   );
   
 
   const bodyContent = (
-    <div className="input-body">
+    <div className="input-row">
       <input type="text" id="body" name="body" onChange={handleBody}/>
     </div>);
 
@@ -51,6 +49,7 @@ export default function Request_Body({requestBody, setRequestBody}) {
           {activePopup =='body'? bodyContent : ""}
         </div>
       )}
+
     </div>
   );
 }

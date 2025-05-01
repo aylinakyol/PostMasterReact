@@ -14,9 +14,11 @@ export default function Page_Collections() {
     }, []);
 
     const requestList = requests.map((request, index) => (
-        <li key={index}>
-            {request.requestType} - {request.url}<br />
-            Body: {JSON.stringify(request.requestBody, null, 2)}<br />
+        <li className="request-item" key={index}>
+            <p>Request Type: {request.requestType.toUpperCase()}</p><br />
+            <p>Url: {request.url}</p><br />
+            <p>Header: {request.requestHeader}</p><br />
+            <p>Body: {JSON.stringify(request.requestBody, null, 2)}</p>
             <button onClick={() => handleCollection(request)}>Go to Request</button>
         </li>
     ));
@@ -26,7 +28,7 @@ export default function Page_Collections() {
     }
 
     return (
-        <div className="input-header">
+        <div className="collection-list">
             <h2>Collections</h2>
             <ul>{requestList}</ul>
         </div>
