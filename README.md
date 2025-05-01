@@ -1,2 +1,1 @@
 
-* Fetch le bağlantıları kur.
