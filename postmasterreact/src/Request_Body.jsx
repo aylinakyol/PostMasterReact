@@ -30,7 +30,7 @@ export default function Request_Body({requestBody, setRequestBody, requestHeader
 
   const bodyContent = (
     <div className="input-row">
-      <input type="text" id="body" name="body" onChange={handleBody}/>
+      <input type="text" id="body" name="body" onChange={handleBody}  className="input-row"/>
     </div>);
 
   return (

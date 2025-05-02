@@ -20,7 +20,7 @@ export default function Page_Home() {
             console.log(requestUrl);
             setUrl(requestUrl);
         }else{
-            setUrl("");
+            setUrl("http://");
         }
     }, [location]);
 
@@ -118,8 +118,8 @@ export default function Page_Home() {
             </select>
 
             <label htmlFor="url">Url:</label>
-            <input type="text" id="url" name="url" value={url} onChange={(e) => setUrl(e.target.value)} />
-            <button onClick={handleButtonClick}>Make Request</button>
+            <input type="text" id="url" name="url" value={url} onChange={(e) => setUrl(e.target.value)} className="input-url"/>
+            <button onClick={handleButtonClick} className="request-button">Make Request</button>
             <Request_Body requestBody={requestBody} setRequestBody={setRequestBody} requestHeader={requestHeader} setRequestHeader={setRequestHeader}/>
             {responseData && (
                 <pre className="pre-output">
