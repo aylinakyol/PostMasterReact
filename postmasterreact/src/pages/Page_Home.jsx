@@ -23,6 +23,7 @@ export default function Page_Home() {
             setUrl(requestUrl);
         }else{
             setUrl("http://");
+            setResponseData("");
         }
     }, [location]);
 

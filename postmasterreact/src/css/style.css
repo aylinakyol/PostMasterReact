@@ -287,9 +287,45 @@ label {
 
 .input-row {
   display: flex;
+  margin-top: 1rem;
   width: 400px;
   gap: 1rem;
 }
+
+.settings-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 400px;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: Arial, sans-serif;
+}
+
+.settings-row label {
+  margin-bottom: 0.25rem;
+  font-size: 1.3rem;
+  color: #425f89;
+}
+
+.settings-row input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.settings-row input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
 
 .collection-list{
   display: flex;
