@@ -1,6 +1,7 @@
 import Request_Body from "../Request_Body"
 import { useState, useEffect} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { sendRequest } from "../BaseFunctions";
 
 export default function Page_Home() {
     const location = useLocation();
@@ -11,6 +12,7 @@ export default function Page_Home() {
     const [requestType, setRequestType] = useState("post");
     const [url, setUrl] = useState("");
     const [responseData, setResponseData] = useState("");
+    const [params, setParams] = useState("");
 
 
     useEffect(() => {
@@ -24,14 +26,27 @@ export default function Page_Home() {
         }
     }, [location]);
 
+    function handleUrl(e){
+        setUrl(e.target.value);
+    }
 
     function handleSelectChange(e){
         setRequestType(e.target.value);
-        console.log("Seçilen değer:", e.target.value);
     }
 
     async function handleButtonClick() {
-        sendRequest();
+        analyzeUrl();
+        await sendRequest(
+            url,
+            requestType,
+            requestHeader,
+            requestBody,
+            setResponseData,
+        );
+        saveRequest();
+    }
+
+    function saveRequest(){
         const requestData = {
             requestType,
             url,
@@ -50,57 +65,13 @@ export default function Page_Home() {
     
         localStorage.setItem("requests", JSON.stringify(requests));
         console.log("Request kaydedildi:", requestData);
-
     }
-    
-    async function sendRequest() {
-        try {
-            let requestOptions = {
-                method: requestType,
-                headers:{
-                    'Content-Type': 'application/json',
-                    ...requestHeader
-                },
-            }
-            if (requestType !== "get") {
-                let parsedBody;
-                try {
-                parsedBody = JSON.parse(requestBody);
-                requestOptions.body = JSON.stringify(parsedBody)
-                } catch (e) {
-                    const output = {
-                        success: false,
-                        error: e.message
-                    };
-                    setResponseData(output);
-                }
-            }
-            const response = await fetch(url, requestOptions);
-            const contentType = response.headers.get('content-type');
 
-            let data;
-            if (contentType && contentType.includes('application/json')) {
-                data = await response.json();
-            } else {
-                data = await response.text();
-            }
-
-            const output = {
-                success: true,
-                status: response.status,
-                data: data
-            };
-        
-            console.log(output);
-            setResponseData(output);
-        } catch (error) {
-            const output = {
-                success: false,
-                error: error.message
-            };
-
-            console.error('Fetch Error:', error);
-            setResponseData(output);
+    function analyzeUrl() {
+        if(params !== ''){
+            let queryString = new URLSearchParams(params).toString();
+            console.log(`${url}?${queryString}`);
+            setUrl(`${url}?${queryString}`);
         }
     }
       
@@ -118,9 +89,18 @@ export default function Page_Home() {
             </select>
 
             <label htmlFor="url">Url:</label>
-            <input type="text" id="url" name="url" value={url} onChange={(e) => setUrl(e.target.value)} className="input-url"/>
+            <input type="text" id="url" name="url" value={url} onChange={handleUrl} className="input-url"/>
+
             <button onClick={handleButtonClick} className="request-button">Make Request</button>
-            <Request_Body requestBody={requestBody} setRequestBody={setRequestBody} requestHeader={requestHeader} setRequestHeader={setRequestHeader}/>
+
+            <Request_Body 
+                requestBody={requestBody} 
+                setRequestBody={setRequestBody} 
+                requestHeader={requestHeader} 
+                setRequestHeader={setRequestHeader} 
+                setParams={setParams}  
+            />
+
             {responseData && (
                 <pre className="pre-output">
                     {JSON.stringify(responseData, null, 2)}

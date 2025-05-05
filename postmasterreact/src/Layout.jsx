@@ -2,7 +2,7 @@ import { Outlet, NavLink , useNavigate} from "react-router-dom";
 import { useContext } from "react";
 import { ContextError } from './ContextError';
 import Page_Home from "./pages/Page_Home";
-import SideBar from "./SideBar";
+import SideBar from "./components/SideBar";
 
 export default function Layout() {
     const { isErrorExist, setIsErrorExist, error, setError } = useContext(ContextError);
